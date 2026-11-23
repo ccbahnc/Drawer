@@ -15,7 +15,8 @@ internal sealed record GlobalAppearance(bool ShowNames=true,int IconSize=38,int 
     DrawerColorScheme ColorScheme=DrawerColorScheme.Light,DrawerMaterial Material=DrawerMaterial.Solid,
     [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] DrawerLanguage? Language=null,
     bool ShowNavigation=true,
-    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] string? InstallationLanguageRevision=null);
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] string? InstallationLanguageRevision=null,
+    bool AllowInFullScreen=false);
 internal sealed record EdgePreference(DrawerEdge Edge,bool Enabled,int Rows,int Columns);
 internal sealed record PreferenceDocument(int Version,GlobalAppearance Global,List<EdgePreference> Edges);
 internal sealed class DrawerPreferences

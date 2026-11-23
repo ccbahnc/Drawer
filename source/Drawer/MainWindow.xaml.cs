@@ -517,7 +517,8 @@ public sealed partial class MainWindow : Window
         // Only query shell windows when there is an interaction to evaluate.
         bool allowed = true;
         string reason = "idle";
-        if (trigger || _visible) allowed = _gate.Allows(cursor, _geometry.Monitor, _visible, out reason);
+        if (trigger || _visible) allowed = _gate.Allows(cursor, _geometry.Monitor, _visible, out reason,
+            _preferences.Value.Global.AllowInFullScreen);
         bool leftDown = (GetAsyncKeyState(1) & 0x8000) != 0;
         bool explorer = ((leftDown && (trigger || _visible)) || (_dragOpened && _visible)) &&
             _gate.ExplorerForeground();

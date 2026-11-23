@@ -40,4 +40,4 @@ $assemblyFile = Get-ChildItem -LiteralPath (Join-Path $installRoot 'source\obj')
 $metadata=Get-Content -LiteralPath $assemblyFile.FullName -Raw
 if($metadata -match 'RecordingEdition'){throw 'Recording build metadata must not appear in installable app'}
 $stamp=[regex]::Match($metadata,'BuildUtc", "([^"]+)"').Groups[1].Value
-[ordered]@{ApplicationVersion='0.1.0';FileVersion='0.1.0.1';Build="Drawer-0.1-test-r1-$stamp";DllSHA256=(Get-FileHash -LiteralPath (Join-Path $payload 'Drawer.dll')).Hash;PayloadFiles=@($manifest).Count;PayloadBytes=($manifest|Measure-Object Bytes -Sum).Sum;RecordingEdition=$false} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $installRoot 'application-build-info.json') -Encoding UTF8
+[ordered]@{ApplicationVersion='0.2.0';FileVersion='0.2.0.1';Build="Drawer-0.2-test-r1-$stamp";DllSHA256=(Get-FileHash -LiteralPath (Join-Path $payload 'Drawer.dll')).Hash;PayloadFiles=@($manifest).Count;PayloadBytes=($manifest|Measure-Object Bytes -Sum).Sum;RecordingEdition=$false} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $installRoot 'application-build-info.json') -Encoding UTF8

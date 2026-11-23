@@ -53,7 +53,7 @@ internal sealed class IdlePerformance
         int Dpi, Drawer.Core.PixelRect Screen, Drawer.Core.PixelRect WorkArea, int ScreenRevision,
         long ConfigurationRevision, int Rows, int Columns, double Scale, string ConfiguredMaterial, string DisplayedMaterial,
         string Scheme, int Drawers, int EnabledDrawers, int Icons, int VisibleSlots, bool ShowNavigation, int TimerIntervalMs,
-        long WorkingSetBytes, long PrivateBytes);
+        long WorkingSetBytes, long PrivateBytes, bool AllowInFullScreen);
 
     private IdlePerformance(string path) { _path = path; }
 
@@ -181,7 +181,7 @@ internal sealed class IdlePerformance
             first.Scheme != next.Scheme) changes |= Change.Material;
         if (first.Dpi != next.Dpi || first.Screen != next.Screen || first.WorkArea != next.WorkArea ||
             first.ScreenRevision != next.ScreenRevision) changes |= Change.Display;
-        if (first.ConfigurationRevision != next.ConfigurationRevision) changes |= Change.Configuration;
+        if (first.ConfigurationRevision != next.ConfigurationRevision || first.AllowInFullScreen != next.AllowInFullScreen) changes |= Change.Configuration;
         if (first.Rows != next.Rows || first.Columns != next.Columns || first.Scale != next.Scale ||
             first.Drawers != next.Drawers || first.EnabledDrawers != next.EnabledDrawers || first.Icons != next.Icons ||
             first.VisibleSlots != next.VisibleSlots || first.ShowNavigation != next.ShowNavigation) changes |= Change.Layout;

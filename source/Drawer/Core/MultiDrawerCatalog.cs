@@ -133,6 +133,11 @@ internal sealed partial class MultiDrawerCatalog
         ? value with { Global = value.Global with { ShowNames = true } } : value;
 
     public void SetShowNames(bool show) => Commit(Value with { Global = Value.Global with { ShowNames = show } });
+    public void SetAllowInFullScreen(bool allow)
+    {
+        if (Value.Global.AllowInFullScreen != allow)
+            Commit(Value with { Global = Value.Global with { AllowInFullScreen = allow } });
+    }
     public void SetShowNavigation(bool show) => Commit(Value with { Global = Value.Global with { ShowNavigation = show } });
     public void SetColorScheme(DrawerColorScheme colorScheme)
     {

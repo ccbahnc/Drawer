@@ -1,14 +1,14 @@
-#define ProductId "A3C6E7D8-2B10-4F64-91DD-5F21D9A06701"
+﻿#define ProductId "A3C6E7D8-2B10-4F64-91DD-5F21D9A06701"
 #ifndef Payload
   #define Payload "..\staging\win-x64"
 #endif
 [Setup]
 AppId={#ProductId}
 AppName=Drawer
-AppVersion=0.1
+AppVersion=0.2
 AppVerName={cm:AppTitle}
 AppPublisher=XGaming
-VersionInfoVersion=0.1.0.2
+VersionInfoVersion=0.2.0.1
 DefaultDirName={code:DefaultProgramDirectory}
 DisableDirPage=no
 DisableProgramGroupPage=yes
@@ -17,7 +17,7 @@ ArchitecturesAllowed=x64os
 ArchitecturesInstallIn64BitMode=x64os
 MinVersion=10.0.17763
 OutputDir=..\output
-OutputBaseFilename=Drawer-0.1-win11-x64-test-setup
+OutputBaseFilename=Drawer-0.2-win11-x64-test-r1-setup
 SetupIconFile={#Payload}\Assets\Drawer.ico
 UninstallDisplayIcon={app}\Drawer.exe
 Compression=lzma2
@@ -36,8 +36,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "chinesesimp"; MessagesFile: "ChineseSimplified.isl"
 
 [CustomMessages]
-english.AppTitle=Drawer Test 0.1
-chinesesimp.AppTitle=Drawer 测试版 0.1
+english.AppTitle=Drawer Test 0.2
+chinesesimp.AppTitle=Drawer 测试版 0.2
 english.LanguageFailed=The installation language could not be saved. See the installation log. Existing drawer data has not been replaced.
 chinesesimp.LanguageFailed=未能保存安装语言，请查看安装日志。原有抽屉数据未被替换。
 english.OptionsTitle=Drawer installation options
@@ -173,7 +173,7 @@ end;
 function InitializeSetup(): Boolean;
 var Version: TWindowsVersion;
 begin
-  Log('Drawer installer revision=0.1-test-r2 file-version=0.1.0.2');
+  Log('Drawer installer revision=0.2-test-r1 file-version=0.2.0.1');
   Result := True;
   GetWindowsVersionEx(Version);
   if Version.Build < 22000 then begin
@@ -375,11 +375,11 @@ begin
   if not NextButtonClick(Options.ID) then begin Result := CustomMessage('ShortcutConflict'); exit; end;
   if not RequireStopped() then begin Result := CustomMessage('Running'); exit; end;
   if (BackupDir = '') and DirExists(ExpandConstant('{localappdata}\Drawer')) then begin
-    BackupDir := ExpandConstant('{localappdata}\DrawerBackups\before-Drawer-0.1-test-r2-') + InstallStamp();
+    BackupDir := ExpandConstant('{localappdata}\DrawerBackups\before-Drawer-0.2-test-r1-') + InstallStamp();
     while DirExists(BackupDir) do BackupDir := BackupDir + '-next';
     try
       CopyBackup(ExpandConstant('{localappdata}\Drawer'), BackupDir + '\data');
-      if not SaveStringToFile(BackupDir + '\backup-complete.txt', 'Drawer 0.1 test-r2' + #13#10, False) then
+      if not SaveStringToFile(BackupDir + '\backup-complete.txt', 'Drawer 0.2 test-r1' + #13#10, False) then
         RaiseException(CustomMessage('BackupFailed'));
       Log(CustomMessage('Backup') + ' ' + BackupDir);
     except
@@ -442,7 +442,7 @@ begin
     // Persist only after copying files and applying installation choices.
     // The app consumes this revision once through its normal atomic settings commit.
     SaveInstallationLanguage(ExpandConstant('{localappdata}'), ExpandConstant('{language}'),
-      '0.1-test-r2-' + InstallStamp());
+      '0.2-test-r1-' + InstallStamp());
     InstallationFinished := True;
   end;
 end;

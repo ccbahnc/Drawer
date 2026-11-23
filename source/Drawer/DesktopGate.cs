@@ -13,6 +13,8 @@ internal sealed class DesktopGate(nint drawer)
     private bool _fullScreen;
     private nint _lastTracedBlocker;
     private int _tracedBlockers;
+    private readonly InputDesktopAccess _inputDesktop = new();
+    internal void Invalidate() => _fullScreenCheckedAt = 0;
     private bool OwnWindow(nint hwnd)
     {
         if (hwnd == 0) return false;
@@ -42,14 +44,19 @@ internal sealed class DesktopGate(nint drawer)
         return pid == shellPid && (name == "Progman" || name == "WorkerW");
     }
 
-    public bool Allows(Point cursor, PixelRect screen, bool visible, out string reason)
+    public bool Allows(Point cursor, PixelRect screen, bool visible, out string reason, bool allowInFullScreen = false)
     {
         using var sample = IdlePerformance.Measure(IdlePerformance.Work.DesktopGate);
+        if (allowInFullScreen && !_inputDesktop.IsCurrent())
+        {
+            reason = "input-desktop-unavailable";
+            return false;
+        }
         nint foreground = GetForegroundWindow();
         bool maximized = !OwnWindow(foreground) && !IsDesktop(foreground) && IsWindowVisible(foreground) && !IsIconic(foreground)
             && IsZoomed(foreground) && MonitorFromWindow(foreground, 2) == MonitorFromPoint(new Point(), 1);
         nint hit = GetAncestor(WindowFromPoint(cursor), 2);
-        reason = DesktopPolicy.Evaluate(maximized, FullScreen(screen, foreground), IsDesktop(hit), OwnWindow(hit), visible);
+        reason = DesktopPolicy.Evaluate(maximized, FullScreen(screen, foreground), IsDesktop(hit), OwnWindow(hit), visible, allowInFullScreen);
         return DesktopPolicy.Allowed(reason);
     }
 

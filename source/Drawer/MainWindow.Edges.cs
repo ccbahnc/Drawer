@@ -105,7 +105,7 @@ public sealed partial class MainWindow
             _switchTarget = null;
             return false;
         }
-        if(target!=null && !_gate.Allows(cursor,_geometry.Monitor,_visible,out _) &&
+        if(target!=null && !_gate.Allows(cursor,_geometry.Monitor,_visible,out _,_preferences.Value.Global.AllowInFullScreen) &&
             !((GetAsyncKeyState(1)&0x8000)!=0&&_gate.ExplorerForeground())) target=null;
         if(_switching)
         {

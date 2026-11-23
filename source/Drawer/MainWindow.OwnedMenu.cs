@@ -19,17 +19,18 @@ public sealed partial class MainWindow
     private const int UndoCommand = 60, RedoCommand = 61;
     private const int ToggleStartupCommand = 62, RemoveStartupCommand = 63;
     private const int ToggleNavigationCommand = 64;
+    private const int ToggleFullScreenCommand = 65;
     private MenuFlyout? _ownedMenu;
     private TaskCompletionSource<int>? _menuCompletion;
 
     private sealed record MenuRow(string? Title, int Command = 0, bool Enabled = true, bool? Checked = null,
-        bool Danger = false, DrawerMenu? Submenu = null);
+        bool Danger = false, DrawerMenu? Submenu = null, string? Tooltip = null);
 
     private sealed class DrawerMenu
     {
         public readonly List<MenuRow> Rows = new();
-        public void Add(int command, string title, bool enabled = true, bool? isChecked = null, bool danger = false) =>
-            Rows.Add(new(title, command, enabled, isChecked, danger));
+        public void Add(int command, string title, bool enabled = true, bool? isChecked = null, bool danger = false, string? tooltip = null) =>
+            Rows.Add(new(title, command, enabled, isChecked, danger, Tooltip: tooltip));
         public void Separate() => Rows.Add(new(null));
         public void AddSubmenu(string title, DrawerMenu submenu, bool danger = false) => Rows.Add(new(title, Danger: danger, Submenu: submenu));
     }
@@ -38,6 +39,8 @@ public sealed partial class MainWindow
     {
         AppendAddDrawerMenu(menu);
         menu.Add(ToggleNamesCommand, UiText.Get("ShowIconNames"), isChecked: _preferences.Value.Global.ShowNames);
+        menu.Add(ToggleFullScreenCommand, UiText.Get("AllowInFullScreen"), isChecked: _preferences.Value.Global.AllowInFullScreen,
+            tooltip: UiText.Get("AllowInFullScreenTooltip"));
         AppendLanguageMenu(menu);
         AppendAppearanceMenus(menu);
     }
@@ -76,6 +79,18 @@ public sealed partial class MainWindow
     private bool RunSharedDrawerCommand(int command)
     {
         if (_exitRequested) return true;
+        if (command == ToggleFullScreenCommand)
+        {
+            // Commit first: a failed save must not change runtime behavior or menu state.
+            _preferences.SetAllowInFullScreen(!_preferences.Value.Global.AllowInFullScreen);
+            _gate.Invalidate();
+            foreach (var preview in _previewSurfaces.Values) preview._gate.Invalidate();
+            IdlePerformance.Invalidate(IdlePerformance.Change.Configuration | IdlePerformance.Change.Scene);
+            _wasApproachingEdge = false;
+            SetIdlePolling(false);
+            PrototypeLog.Write($"fullscreen reveal: enabled={_preferences.Value.Global.AllowInFullScreen}");
+            return true;
+        }
         if (command == ToggleNavigationCommand)
         {
             ToggleNavigation();
@@ -237,6 +252,7 @@ public sealed partial class MainWindow
             }
             MenuFlyoutItem item = row.Checked is bool isChecked ? new ToggleMenuFlyoutItem { IsChecked = isChecked } : new MenuFlyoutItem();
             item.Text = row.Title;
+            if (row.Tooltip != null) ToolTipService.SetToolTip(item, row.Tooltip);
             item.IsEnabled = row.Enabled;
             if (danger != null)
             {

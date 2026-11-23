@@ -79,6 +79,7 @@ if (OperatingSystem.IsWindows()) RunSuite("FolderPathImportChecks", FolderPathIm
 RunSuite("LayoutChecks", LayoutChecks.Run);
 RunSuite("GroupChecks", GroupChecks.Run);
 RunSuite("DesktopPolicyChecks", DesktopPolicyChecks.Run);
+RunSuite("FullScreenRevealChecks", FullScreenRevealChecks.Run);
 RunSuite("DragPreviewChecks", DragPreviewChecks.Run);
 RunSuite("RevealChecks", RevealChecks.Run);
 RunSuite("EdgeChecks", EdgeChecks.Run);

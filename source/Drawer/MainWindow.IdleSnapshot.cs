@@ -40,6 +40,6 @@ public sealed partial class MainWindow
             config.Global.Material.ToString(), _displayedMaterial.ToString(), config.Global.ColorScheme.ToString(),
             config.Drawers.Count, config.Drawers.Count(drawer => drawer.Enabled),
             _stores.Values.Sum(store => store.Items.Count), _visible ? _tiles.Count + _members.Length : 0,
-            ShowNavigation, (int)_timer.Interval.TotalMilliseconds, workingSet, privateBytes);
+            ShowNavigation, (int)_timer.Interval.TotalMilliseconds, workingSet, privateBytes, config.Global.AllowInFullScreen);
     }
 }

@@ -40,9 +40,9 @@ begin
   PayloadFiles.Add('de-de\microsoft.ui.xaml.dll.mui|88c85cfa2bc237cbdbfea547e4d9574a946c23fa4d49561532aa7f1181f9efdd');
   PayloadFiles.Add('de-de\microsoft.ui.xaml.phone.dll.mui|9cedcf0cabf6b007c46cbf6fdf6168ba3310b33189e409ec4e70aeb3efe4ca6b');
   PayloadFiles.Add('drawer-install-id.txt|95678abd6ac3b56d2cf9ace716ae5f924d9d70dbe55d377124d90adbb59141fe');
-  PayloadFiles.Add('drawer.deps.json|7715b7e41881589a192286464662f0ca64d20649bb2f557a4a1058ac48fa44f5');
-  PayloadFiles.Add('drawer.dll|0556e8158fcfeb98088659a46fefb10aec009e2df37a1ab0586151fac703523b');
-  PayloadFiles.Add('drawer.exe|4f30fd4e462266150356563091d305ed843bffe54ec0dfa1b44c8843b81b75a2');
+  PayloadFiles.Add('drawer.deps.json|a9b7223f3dd60762a622b95a5ea352f2f1420b5e9060619cfc7bd804a5dd02a8');
+  PayloadFiles.Add('drawer.dll|9af319019a9964ed06092d0beaec20444ef76b978a2059d3056e679fb89f7759');
+  PayloadFiles.Add('drawer.exe|1057cca569e5ba9934f7c896a379ab47a9fe23233eba3d00b7c50b1234893594');
   PayloadFiles.Add('drawer.pri|f659a7e5c6f49174c5fa2dfb454786491628a1ba39daa3795077d07407735ba4');
   PayloadFiles.Add('drawer.runtimeconfig.json|5d7d843ec3fa69473fc22de81de70b7f42c621ef493495c1750cfa7703928d85');
   PayloadFiles.Add('dwmcorei.dll|304fff99301b9c17eb5c64f39ea3ed616f6c3b54bf9881c0c9e55f2db0579264');

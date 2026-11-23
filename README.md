@@ -24,4 +24,6 @@ Windows 桌面边缘抽屉工具，用于收纳快捷方式、文件和网址。
 Drawer is a Windows desktop edge launcher with multiple drawers, folders, drag and drop, configurable layouts, and appearance settings. Download the installer from **Releases**. These unsigned test builds target Windows 11 x64; Windows 10 has not been tested on a physical machine.
 
 Exit any running Drawer instance normally before upgrading. User data remains in `%LOCALAPPDATA%\Drawer`. Uninstall keeps data by default; explicitly choosing data removal deletes Drawer data and its recovery backups. The custom Drawer Free Use and Source Sharing License permits free use, including internal business use. Monetization and Drawer-specific paid services require separate written permission. Redistribution requires corresponding source and retained notices. See LICENSE and THIRD-PARTY-NOTICES.md; this is source-available software, not an OSI-approved open-source license. See the release notes for tested behavior and known limitations.
+0.2新增全局 **全屏时可呼出 / Allow in full screen**，默认关闭。用户已验收本次全屏呼出效果；其他既有功能未在本轮重测。独占全屏等受限程序仍不保证覆盖。
+
 发布仓库：https://github.com/ccbahnc/Drawer 。安装包、对应源码和许可附件见 [Releases](https://github.com/ccbahnc/Drawer/releases)。

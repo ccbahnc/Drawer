@@ -34,11 +34,11 @@ exit /b %errorlevel%
 if($LASTEXITCODE -ne 0){throw 'Native helper compilation failed; see helper-build.log'}
 & $Iscc "/DPayload=$payload" (Join-Path $PSScriptRoot 'Drawer.iss')
 if($LASTEXITCODE -ne 0){throw 'Installer compilation failed'}
-$package=Join-Path $root 'output\Drawer-0.1-win11-x64-test-setup.exe'
+$package=Join-Path $root 'output\Drawer-0.2-win11-x64-test-r1-setup.exe'
 $hash=(Get-FileHash -LiteralPath $package).Hash
-Set-Content -LiteralPath (Join-Path $root 'package-sha256.txt') -Value "$hash  Drawer-0.1-win11-x64-test-setup.exe" -Encoding UTF8
+Set-Content -LiteralPath (Join-Path $root 'package-sha256.txt') -Value "$hash  Drawer-0.2-win11-x64-test-r1-setup.exe" -Encoding UTF8
 [ordered]@{
-    InstallerRevision='0.1-test-r2'; InstallerFileVersion='0.1.0.2'; Publisher='XGaming'
+    InstallerRevision='0.2-test-r1'; InstallerFileVersion='0.2.0.1'; Publisher='XGaming'
     InstallerBuildUtc=[DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'); InstallerSHA256=$hash
     InstallerBytes=(Get-Item -LiteralPath $package).Length
     ApplicationBuild=$app.Build; ApplicationRecompiled=$true

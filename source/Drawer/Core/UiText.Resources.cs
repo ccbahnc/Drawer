@@ -164,6 +164,8 @@ internal static partial class UiText
         ["DrawerMoveFailed"] = ("换位失败，已保留原配置：{0}", "The move failed. The original configuration was retained: {0}"),
         ["AddDrawer"] = ("添加抽屉", "Add drawer"),
         ["ShowIconNames"] = ("显示图标文字", "Show icon names"),
+        ["AllowInFullScreen"] = ("全屏时可呼出", "Allow in full screen"),
+        ["AllowInFullScreenTooltip"] = ("允许在最大化窗口或全屏应用中从屏幕边缘呼出抽屉。", "Allow edge reveal over maximized windows or full-screen apps."),
         ["ShowNavigation"] = ("显示导航栏", "Show navigation bar"),
         ["Settings"] = ("设置", "Settings"),
         ["NavigationSpaceUnavailable"] = ("空间不足，无法显示所有当前可用抽屉的导航栏。请先缩小或移动抽屉。", "There is not enough space to show the navigation bar for all available drawers. Resize or move a drawer first."),
