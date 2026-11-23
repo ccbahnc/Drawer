@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>Drawer</RootNamespace>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.1</FileVersion>
+    <InformationalVersion>0.1.0+test.r1</InformationalVersion>
+    <Company>XGaming</Company>
+    <Product>Drawer</Product>
+    <Description>Drawer 测试版 0.1</Description>
+    <DrawerIdleProfile Condition="'$(DrawerIdleProfile)' == ''">optimized</DrawerIdleProfile>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\Drawer.ico</ApplicationIcon>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <UseWinUI>true</UseWinUI>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <SelfContained>true</SelfContained>
+    <Nullable>enable</Nullable>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyMetadata Include="BuildUtc" Value="$([System.DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))" />
+    <AssemblyMetadata Include="IdleProfile" Value="$(DrawerIdleProfile)" />
+    <AssemblyMetadata Include="InstallRevision" Value="0.1-test-r1" />
+    <AssemblyMetadata Include="BuildLabel" Value="Drawer-0.1-test-r1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.260224002" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
+  </ItemGroup>
+</Project>

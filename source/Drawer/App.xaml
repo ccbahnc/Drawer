@@ -1,0 +1,48 @@
+<Application
+    x:Class="Drawer.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="DrawerPrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource AccentButtonStyle}"/>
+            <SolidColorBrush x:Key="DrawerSurfaceBrush"/>
+            <SolidColorBrush x:Key="DrawerNavigationBrush"/>
+            <SolidColorBrush x:Key="DrawerAcrylicNavigationBrush"/>
+            <SolidColorBrush x:Key="DrawerAcrylicTintBrush"/>
+            <SolidColorBrush x:Key="DrawerTransparentTintBrush"/>
+            <SolidColorBrush x:Key="DrawerTransparentNavigationBrush"/>
+            <SolidColorBrush x:Key="DrawerBlurTintBrush"/>
+            <SolidColorBrush x:Key="DrawerBlurNavigationBrush"/>
+            <SolidColorBrush x:Key="DrawerFolderBrush"/>
+            <SolidColorBrush x:Key="DrawerFolderPanelBrush"/>
+            <SolidColorBrush x:Key="DrawerMenuBrush"/>
+            <SolidColorBrush x:Key="DrawerHoverBrush"/>
+            <SolidColorBrush x:Key="DrawerPressedBrush"/>
+            <SolidColorBrush x:Key="DrawerForegroundBrush"/>
+            <SolidColorBrush x:Key="DrawerSecondaryBrush"/>
+            <SolidColorBrush x:Key="DrawerDisabledBrush"/>
+            <SolidColorBrush x:Key="DrawerOutlineBrush"/>
+            <SolidColorBrush x:Key="DrawerSelectionBorderBrush"/>
+            <SolidColorBrush x:Key="DrawerSelectionFillBrush"/>
+            <SolidColorBrush x:Key="DrawerCheckBrush"/>
+            <SolidColorBrush x:Key="DrawerFocusBrush"/>
+            <SolidColorBrush x:Key="DrawerInputBrush"/>
+            <SolidColorBrush x:Key="DrawerLayoutCellBrush"/>
+            <SolidColorBrush x:Key="DrawerLayoutPreviewBrush"/>
+            <SolidColorBrush x:Key="DrawerShadeBrush"/>
+            <SolidColorBrush x:Key="DrawerRecaptureShadeBrush"/>
+            <SolidColorBrush x:Key="DrawerDangerBrush"/>
+            <SolidColorBrush x:Key="DrawerTransparentBrush"/>
+            <Style x:Key="DrawerMenuPresenterStyle" TargetType="MenuFlyoutPresenter">
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Background" Value="{StaticResource DrawerMenuBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource DrawerOutlineBrush}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+            <Style TargetType="MenuFlyoutPresenter" BasedOn="{StaticResource DrawerMenuPresenterStyle}"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

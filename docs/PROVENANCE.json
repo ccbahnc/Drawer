@@ -1,0 +1,17 @@
+{
+  "Version": "0.1",
+  "SuggestedTag": "v0.1.0-test.2",
+  "Installer": "Drawer-0.1-win11-x64-test-setup.exe",
+  "InstallerBytes": 46651823,
+  "InstallerSHA256": "39E9CA69150D9BEDEA576A7D2FE4D5889BF4D177062443091B552F82179487EF",
+  "ApplicationBuild": "Drawer-0.1-test-r1-20261121-082345",
+  "ApplicationDllSHA256": "0556E8158FCFEB98088659A46FEFB10AEC009E2DF37A1AB0586151FAC703523B",
+  "SourceAppOriginal": "Drawer-0.1-test-r1",
+  "InstallerOriginal": "Drawer-0.1-test-r2",
+  "ApplicationSourceFiles": 103,
+  "ApplicationSourcesUnchanged": true,
+  "PackagingWrappersNormalized": true,
+  "RebuiltDuringPreparation": false,
+  "Uploaded": false,
+  "LicenseDecision": "Drawer Free Use and Source Sharing License 1.0; author approved 1A/2A/3/4B on 2026-11-23"
+}

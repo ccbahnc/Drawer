@@ -1,0 +1,34 @@
+Drawer 免费使用与源码共享许可 1.0
+Drawer Free Use and Source Sharing License 1.0
+
+Copyright (c) 2026 ccbahnc
+https://github.com/ccbahnc/Drawer
+
+本许可适用于版权人有权许可的 Drawer 原创代码、文档及项目自有图标，不适用于另有声明的第三方代码、依赖、商标或素材。这是自定义源码可用许可，不是 MIT、GPL 或 OSI 认可的开源许可证。
+
+1. 免费使用和修改
+任何个人、企业、学校或其他组织均可免费运行、复制、研究和修改本软件，包括内部办公、学习和日常工作。使用本软件辅助自己的正常工作、制作视频或介绍软件，不因这些活动本身可能产生收入而被禁止。未对外分发的内部修改不要求向公众提供源码。
+
+2. 禁止对软件直接变现
+未经版权人另行书面授权，不得出售、出租或收费分发本软件、修改版或实质性派生版本；不得设置收费下载、付费解锁、订阅、以使用本软件为条件的收费，或在软件中植入牟利广告；不得将软件或其派生代码集成到对外提供的收费产品或收费服务中。不得通过改名、换图标、捆绑销售等方式规避限制。
+未经版权人另行书面授权，也不得向第三方提供专门针对 Drawer 或其修改版的收费定制开发、安装、部署、维护或技术支持服务。本条不禁止个人或组织正常内部办公，也不因雇员日常内部工作领取薪酬而禁止该工作。
+
+3. 免费再分发和对应源码
+允许在遵守本许可条件时免费分发原版或修改版。分发可执行文件时，必须同时提供与所分发版本对应、完整且可编辑的项目源码和构建所需脚本，可随包提供或给出无需付费即可取得的稳定下载地址。
+不得仅提供不匹配的旧源码、不可用于修改的中间产物，或闭源分发修改版。修改和再分发版本必须继续适用本许可，不得移除免费使用、禁止直接变现或对应源码共享条件。
+对于另有许可的独立第三方组件，遵循其原许可；本条不要求公开无权再许可的第三方专有源码，也不得向其附加与原许可冲突的限制。
+
+4. 署名、图标和修改说明
+必须保留上述版权声明、本许可全文和适用的第三方声明。项目自有图标与原创源码适用同一许可，可以在遵守本许可时免费修改和分享。修改版必须清楚标注为非官方修改版并说明修改者及主要修改，不得冒充原作者的官方发布或未经授权声称获得认可。
+
+5. 保证和责任
+本软件按“现状”和“可用”提供，在适用法律允许的范围内不作适销性、特定用途适用性等保证，版权人及贡献者不对使用本软件产生的损失承担法律允许排除的责任；本条不排除依法不得排除的责任。
+
+6. 权利边界
+未明确授予的权利由权利人保留。第三方部分始终遵循各自许可；本许可不授予其商标或其他未获授权的权利，也不限制第三方许可或法律另行赋予的权利。超出本许可范围的变现用途需要版权人单独书面授权。
+
+本许可中文正文为准。以下英文为说明性摘要，不替代中文正文。
+
+English summary:
+Individuals and organizations may use, study and modify Drawer free of charge, including for internal business work. Using Drawer as a tool for ordinary work or independent videos is allowed. Without separate written permission, you may not monetize Drawer or derived versions through sales, rental, paid distribution, downloads, features, subscriptions, in-app advertising, integration into paid products or services, or Drawer-specific paid customization, installation, deployment, maintenance or support offered to third parties.
+Free redistribution must retain this license and copyright notices and provide complete corresponding editable project source and build scripts. Internal modifications that are not distributed do not require public release. Derived versions must retain these terms and be clearly identified as unofficial modifications. Project-owned icons follow the same terms. Third-party components remain under their own licenses. The software is provided as-is to the extent permitted by law. The Chinese text governs.
